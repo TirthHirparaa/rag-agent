@@ -166,36 +166,6 @@ streamlit run app.py
 
 The application will open in your browser.
 
-## 🤗 Embeddings
-
-This project uses:
-
-```text
-sentence-transformers/all-MiniLM-L6-v2
-```
-
-through Hugging Face.
-
-The embedding model runs **locally**, so no OpenAI or Gemini embedding API is required.
-
-```python
-embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
-```
-
-## 🤖 LLM
-
-The application uses Groq through LangChain:
-
-```python
-llm = ChatGroq(
-    model="openai/gpt-oss-20b"
-)
-```
-
-The Groq API is used only for generating responses. Document embeddings are generated locally.
-
 ## 📌 Important Notes
 
 - Uploaded PDFs are stored temporarily in the `doc_files` directory.
@@ -204,18 +174,6 @@ The Groq API is used only for generating responses. Document embeddings are gene
 - The Hugging Face embedding model is downloaded the first time it is used.
 - Keep your API keys private.
 - Do not commit `.env` or PDF files to GitHub.
-
-## 🔮 Future Improvements
-
-- Add persistent vector databases such as Chroma or FAISS
-- Add document deletion functionality
-- Add chat history persistence
-- Add source citations for retrieved chunks
-- Add support for DOCX and TXT files
-- Add document management UI
-- Deploy the application online
-- Add streaming responses
-- Improve prompt engineering and retrieval quality
 
 ## 👨‍💻 Author
 
